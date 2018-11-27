@@ -36,6 +36,7 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         if (!data) {
+          this.setState({tasks: []})
           return;
         }
         const array = Object.entries(data)
@@ -78,7 +79,6 @@ class App extends Component {
   }
 
   taskIsCompleted(id) {
-    console.log(id)
     let completed = this.state.tasks
     completed.map((task) => {
       if (task.id === id) {
