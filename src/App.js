@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Button from './Elements/Button'
+import Input from './Elements/Input'
+import Paper from 'material-ui/Paper'
+
+const style = {
+  paper: {
+    margin: 20,
+    padding: 50
+  }
+}
 
 class App extends Component {
+  state = {
+    tasks: [],
+    taskName: ""
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Paper style={style.paper}>
+          <div>
+            <Input
+              label='Task'
+              hintText="Task Name"
+              fullWidth={false}
+
+            />
+            <Button
+              primary={true}
+              label='Dodaj'
+              onClick={() => { }}
+            />
+          </div>
+        </Paper>
       </div>
     );
   }
